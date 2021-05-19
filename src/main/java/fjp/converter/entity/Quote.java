@@ -15,7 +15,9 @@ import javax.persistence.Index;
 import java.io.Serializable;
 
 @NamedQuery(name="Quote.deleteAll", query="delete from Quote")
-@NamedQuery(name="Quote.findAll", query="select q from Quote q left join fetch q.security order by q.security.id, q.date")
+@NamedQuery(name="Quote.findAll", query="select q from Quote q"
+//+ " left join fetch q.security"
++ " order by q.security.id, q.date")
 @NamedQuery(name="Quote.findLastTwo", query="select q,qq from Quote q"
 + " left join fetch q.security"
 + " left join Quote qq on (qq.security = q.security and qq.date ="
