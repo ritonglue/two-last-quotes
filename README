@@ -1,0 +1,4 @@
+compile the project : mvn clean package
+test the project : http://localhost:8080/quote-1.0/test
+Wildfly 20 : ok
+Payara 5 : ko. EclipseLink cannot generate the query that load the last two quotes
